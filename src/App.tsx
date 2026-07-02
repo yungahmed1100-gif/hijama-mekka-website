@@ -1,5 +1,8 @@
+import { useEffect } from "react";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { BranchPickerProvider } from "./contexts/BranchPickerContext";
 import { useReveal } from "./hooks/useReveal";
+import { initClickTracking } from "./lib/analytics";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TrustStrip from "./components/TrustStrip";
@@ -13,6 +16,7 @@ import Footer from "./components/Footer";
 
 function AppInner() {
   useReveal();
+  useEffect(() => initClickTracking(), []);
   return (
     <div className="min-h-screen bg-snow font-sans">
       <Navbar />
@@ -34,7 +38,9 @@ function AppInner() {
 export default function App() {
   return (
     <LanguageProvider>
-      <AppInner />
+      <BranchPickerProvider>
+        <AppInner />
+      </BranchPickerProvider>
     </LanguageProvider>
   );
 }

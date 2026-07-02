@@ -1,0 +1,29 @@
+- CSV
+
+6A0720,EFE9EB,B8ABAC,4C041A,E8E1E5
+
+- With #
+
+#6A0720, #EFE9EB, #B8ABAC, #4C041A, #E8E1E5
+
+- Array
+
+["6A0720","EFE9EB","B8ABAC","4C041A","E8E1E5"]
+
+- Object
+
+{"Night Bordeaux":"6A0720","Snow":"EFE9EB","Silver":"B8ABAC","Night Bordeaux 2":"4C041A","Alabaster Grey":"E8E1E5"}
+
+- Extended Array
+
+[{"name":"Night Bordeaux","hex":"6A0720","rgb":[106,7,32],"cmyk":[0,93,70,58],"hsb":[345,93,42],"hsl":[345,88,22],"lab":[21,41,15]},{"name":"Snow","hex":"EFE9EB","rgb":[239,233,235],"cmyk":[0,3,2,6],"hsb":[340,3,94],"hsl":[340,16,93],"lab":[93,2,0]},{"name":"Silver","hex":"B8ABAC","rgb":[184,171,172],"cmyk":[0,7,7,28],"hsb":[355,7,72],"hsl":[355,8,70],"lab":[71,5,1]},{"name":"Night Bordeaux","hex":"4C041A","rgb":[76,4,26],"cmyk":[0,95,66,70],"hsb":[342,95,30],"hsl":[342,90,16],"lab":[14,33,8]},{"name":"Alabaster Grey","hex":"E8E1E5","rgb":[232,225,229],"cmyk":[0,3,1,9],"hsb":[326,3,91],"hsl":[326,13,90],"lab":[90,3,-1]}]
+
+- XML
+
+<palette>
+  <color name="Night Bordeaux" hex="6A0720" r="106" g="7" b="32" />
+  <color name="Snow" hex="EFE9EB" r="239" g="233" b="235" />
+  <color name="Silver" hex="B8ABAC" r="184" g="171" b="172" />
+  <color name="Night Bordeaux" hex="4C041A" r="76" g="4" b="26" />
+  <color name="Alabaster Grey" hex="E8E1E5" r="232" g="225" b="229" />
+</palette>

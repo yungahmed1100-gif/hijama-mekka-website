@@ -1,5 +1,5 @@
 export const ar = {
-  dir: "rtl" as const,
+  dir: "rtl" as "rtl" | "ltr",
   lang: "ar",
   nav: {
     home: "الرئيسية",
@@ -118,7 +118,7 @@ export const ar = {
       { name: "الخوض",    phone: "78778416" },
       { name: "النصب",    phone: "90719704" },
       { name: "العامرات", phone: "77544378" },
-      { name: "المعيبيلة",phone: "78080773" },
+      { name: "المعبيلة",phone: "78080773" },
       { name: "بركـاء",   phone: "95120105" },
       { name: "صحـار",    phone: "78110421" },
       { name: "السـويق",  phone: "78812295" },
@@ -144,12 +144,21 @@ export const ar = {
     ctaCall: "اتصل الآن",
     disclaimer: "نرد على جميع الاستفسارات خلال ساعة واحدة",
   },
+  branchPicker: {
+    title: "أي فرع أقرب إليك؟",
+    subtitle: "اختر الفرع لبدء محادثة واتساب مباشرة",
+    close: "إغلاق",
+    doctorName: "د. محمد",
+    doctorRole: "الطبيب المسؤول · استشاري أول",
+    doctorPhone: "99351374",
+  },
   footer: {
     tagline: "الشفاء بسنة النبي ﷺ — علاج طبيعي معتمد في سلطنة عُمان.",
     links: "روابط سريعة",
     contact: "تواصل معنا",
     rights: "جميع الحقوق محفوظة",
     clinic: "مكة حجامة",
+    follow: "تابعنا على إنستغرام",
   },
 };
 

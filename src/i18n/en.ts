@@ -146,11 +146,20 @@ export const en: Translations = {
     ctaCall: "Call Now",
     disclaimer: "We respond to all enquiries within one hour",
   },
+  branchPicker: {
+    title: "Which branch is closest to you?",
+    subtitle: "Pick a branch to start a WhatsApp chat directly",
+    close: "Close",
+    doctorName: "Dr. Mohammed",
+    doctorRole: "Head Doctor · First Consultant",
+    doctorPhone: "99351374",
+  },
   footer: {
     tagline: "Healing through the Sunnah ﷺ — certified natural therapy in the Sultanate of Oman.",
     links: "Quick Links",
     contact: "Contact",
     rights: "All rights reserved",
     clinic: "Mekka Hijama",
+    follow: "Follow us on Instagram",
   },
 };

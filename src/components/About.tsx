@@ -1,4 +1,5 @@
 import { useLang } from "../contexts/LanguageContext";
+import { useBranchPicker } from "../contexts/BranchPickerContext";
 
 const badges = [
   { icon: "🌿", label: "طبيعي 100٪" },
@@ -9,6 +10,7 @@ const badges = [
 
 export default function About() {
   const { t } = useLang();
+  const { open } = useBranchPicker();
 
   return (
     <section id="about" className="py-28 lg:py-36 bg-snow overflow-hidden">
@@ -86,10 +88,9 @@ export default function About() {
             </div>
 
             <div className="reveal reveal-delay-5 mt-9">
-              <a href="https://wa.me/96899351374" target="_blank" rel="noopener noreferrer"
-                className="btn-primary">
+              <button type="button" onClick={open} className="btn-primary">
                 {t.about.cta}
-              </a>
+              </button>
             </div>
           </div>
         </div>

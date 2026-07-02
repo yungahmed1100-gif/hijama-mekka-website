@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useLang } from "../contexts/LanguageContext";
+import { useBranchPicker } from "../contexts/BranchPickerContext";
 
 const WA_ICON = (
   <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current shrink-0">
@@ -11,6 +12,7 @@ const WA_ICON = (
 
 export default function Navbar() {
   const { t, lang, setLang } = useLang();
+  const { open } = useBranchPicker();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("#home");
@@ -92,15 +94,14 @@ export default function Navbar() {
           </div>
 
           {/* Book CTA */}
-          <a
-            href="https://wa.me/96899351374"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={open}
             className="hidden sm:inline-flex btn-gold gap-1.5 px-4 py-2 text-xs"
           >
             {WA_ICON}
             {t.nav.book}
-          </a>
+          </button>
 
           {/* Hamburger */}
           <button
@@ -151,14 +152,13 @@ export default function Navbar() {
             ))}
           </div>
           <div className="px-4 pt-2">
-            <a
-              href="https://wa.me/96899351374"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => { setMenuOpen(false); open(); }}
               className="flex w-full items-center justify-center btn-whatsapp"
             >
               {t.nav.book}
-            </a>
+            </button>
           </div>
         </div>
       </div>
