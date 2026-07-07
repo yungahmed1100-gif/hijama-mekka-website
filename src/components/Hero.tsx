@@ -111,13 +111,17 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ── RIGHT: hero.png — edges dissolve into #3F0013 ── */}
+          {/* ── RIGHT: hero.webp — edges dissolve into #3F0013 ── */}
           <div className="reveal order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[420px] lg:max-w-none lg:w-[90%]">
 
               <img
-                src="/hero.png"
-                alt="Hijama therapy"
+                src="/hero.webp"
+                alt="مكة حجامة — الحجامة النبوية والعلاج الطبيعي والعلاج الصيني في عُمان | Mekka Hijama, cupping, physiotherapy & Chinese therapy in Oman"
+                width={1406}
+                height={1119}
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-auto object-contain relative z-10 block"
                 style={{
                   filter: "drop-shadow(0 20px 60px rgba(63,0,19,0.7))",
