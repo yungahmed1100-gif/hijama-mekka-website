@@ -1,0 +1,19 @@
+{
+  "name": "مكة حجامة | Mekka Hijama Clinic",
+  "short_name": "مكة حجامة",
+  "description": "عيادة معتمدة للحجامة النبوية والعلاج الطبيعي والعلاج الصيني في سلطنة عُمان.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf6f7",
+  "theme_color": "#4c041a",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

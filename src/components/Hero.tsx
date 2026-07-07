@@ -1,5 +1,6 @@
 import { ChevronDown } from "lucide-react";
 import { useLang } from "../contexts/LanguageContext";
+import { useBranchPicker } from "../contexts/BranchPickerContext";
 
 const WA = (
   <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current shrink-0">
@@ -10,6 +11,7 @@ const WA = (
 
 export default function Hero() {
   const { t } = useLang();
+  const { open } = useBranchPicker();
 
   return (
     <section
@@ -17,20 +19,6 @@ export default function Hero() {
       className="relative min-h-[100svh] flex items-center overflow-hidden"
       style={{ background: "#3F0013" }}
     >
-      {/* ── BG.JPEG — full bleed, faded, text sits on top ── */}
-      <div className="absolute inset-0 pointer-events-none">
-        <img
-          src="/bg.jpeg"
-          alt=""
-          aria-hidden="true"
-          className="w-full h-full object-cover object-center"
-          style={{ opacity: 0.12 }}
-        />
-        {/* dark wash on top of bg image so text is always readable */}
-        <div className="absolute inset-0"
-          style={{ background: "linear-gradient(160deg, rgba(63,0,19,0.72) 0%, rgba(63,0,19,0.55) 50%, rgba(63,0,19,0.80) 100%)" }} />
-      </div>
-
       {/* Subtle dot-grid texture */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
         style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
@@ -92,15 +80,14 @@ export default function Hero() {
 
             {/* CTA buttons */}
             <div className="reveal reveal-delay-4 flex flex-wrap gap-3 justify-center lg:justify-start mb-10">
-              <a
-                href="https://wa.me/96899351374"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={open}
                 className="btn-whatsapp"
               >
                 {WA}
                 {t.hero.ctaBook}
-              </a>
+              </button>
               <a href="#about" className="btn-ghost text-sm">
                 {t.hero.ctaLearn}
               </a>
@@ -124,13 +111,17 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ── RIGHT: hero.png — edges dissolve into #3F0013 ── */}
+          {/* ── RIGHT: hero.webp — edges dissolve into #3F0013 ── */}
           <div className="reveal order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[420px] lg:max-w-none lg:w-[90%]">
 
               <img
-                src="/hero.png"
-                alt="Hijama therapy"
+                src="/hero.webp"
+                alt="مكة حجامة — الحجامة النبوية والعلاج الطبيعي والعلاج الصيني في عُمان | Mekka Hijama, cupping, physiotherapy & Chinese therapy in Oman"
+                width={1406}
+                height={1119}
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-auto object-contain relative z-10 block"
                 style={{
                   filter: "drop-shadow(0 20px 60px rgba(63,0,19,0.7))",

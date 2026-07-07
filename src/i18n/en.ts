@@ -3,6 +3,11 @@ import type { Translations } from "./ar";
 export const en: Translations = {
   dir: "ltr",
   lang: "en",
+  seo: {
+    title: "Mekka Hijama | Cupping, Physiotherapy & Chinese Therapy in Oman",
+    description:
+      "Mekka Hijama — certified clinic for prophetic hijama (cupping), physiotherapy and Chinese therapy in the Sultanate of Oman. 12 branches in Muscat, Sohar, Salalah and more. Book via WhatsApp.",
+  },
   nav: {
     home: "Home",
     about: "About Hijama",
@@ -35,7 +40,9 @@ export const en: Translations = {
   trust: {
     items: [
       "100% Natural",
-      "Prophetic Sunnah",
+      "Hijama / Cupping",
+      "Physiotherapy",
+      "Chinese Therapy",
       "Certified Therapists",
       "Registered in Oman",
       "Safe & Sterile",
@@ -146,11 +153,20 @@ export const en: Translations = {
     ctaCall: "Call Now",
     disclaimer: "We respond to all enquiries within one hour",
   },
+  branchPicker: {
+    title: "Which branch is closest to you?",
+    subtitle: "Pick a branch to start a WhatsApp chat directly",
+    close: "Close",
+    doctorName: "Dr. Mohammed",
+    doctorRole: "Head Doctor · First Consultant",
+    doctorPhone: "99351374",
+  },
   footer: {
     tagline: "Healing through the Sunnah ﷺ — certified natural therapy in the Sultanate of Oman.",
     links: "Quick Links",
     contact: "Contact",
     rights: "All rights reserved",
     clinic: "Mekka Hijama",
+    follow: "Follow us on Instagram",
   },
 };

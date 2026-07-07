@@ -1,5 +1,6 @@
 import { Phone, MapPin, Clock } from "lucide-react";
 import { useLang } from "../contexts/LanguageContext";
+import { useBranchPicker } from "../contexts/BranchPickerContext";
 
 const WA = (
   <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current shrink-0">
@@ -10,6 +11,7 @@ const WA = (
 
 export default function Contact() {
   const { t } = useLang();
+  const { open } = useBranchPicker();
 
   const details = [
     { Icon: Phone, label: t.contact.phoneLabel, value: t.contact.phone, href: "tel:+96899351374" },
@@ -107,11 +109,11 @@ export default function Contact() {
               <p className="text-snow/45 text-sm mb-8">{t.contact.phone}</p>
 
               <div className="flex flex-col gap-3">
-                <a href="https://wa.me/96899351374" target="_blank" rel="noopener noreferrer"
+                <button type="button" onClick={open}
                   className="btn-whatsapp justify-center w-full">
                   {WA}
                   {t.contact.ctaWhatsapp}
-                </a>
+                </button>
                 <a href="tel:+96899351374"
                   className="inline-flex w-full items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-snow/20 text-snow/75 text-sm font-semibold hover:bg-white/8 hover:border-snow/35 hover:text-snow transition-all">
                   <Phone className="w-4 h-4" />

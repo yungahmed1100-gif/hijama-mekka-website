@@ -41,7 +41,11 @@ export default function Gallery() {
             >
               <img
                 src={src}
-                alt={`Clinic ${i + 1}`}
+                alt={`${t.gallery.title} — مكة حجامة Mekka Hijama clinic Oman ${i + 1}`}
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="450"
                 className={`w-full object-cover transition-transform duration-700 group-hover:scale-[1.07] ${
                   i === 0 ? "h-60 md:h-full" : "h-44 md:h-52"
                 }`}
