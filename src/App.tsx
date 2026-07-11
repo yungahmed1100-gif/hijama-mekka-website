@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { BranchPickerProvider } from "./contexts/BranchPickerContext";
 import { useReveal } from "./hooks/useReveal";
@@ -40,6 +41,7 @@ export default function App() {
     <LanguageProvider>
       <BranchPickerProvider>
         <AppInner />
+        <Analytics />
       </BranchPickerProvider>
     </LanguageProvider>
   );
