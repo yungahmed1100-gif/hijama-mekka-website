@@ -1,20 +1,15 @@
 import { Phone, MapPin, Clock } from "lucide-react";
 import { useLang } from "../contexts/LanguageContext";
 import { useBranchPicker } from "../contexts/BranchPickerContext";
-
-const WA = (
-  <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current shrink-0">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.114 1.523 5.843L0 24l6.335-1.498A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.013-1.373l-.36-.213-3.731.882.93-3.634-.234-.373A9.818 9.818 0 1112 21.818z"/>
-  </svg>
-);
+import { PHONE_MAIN } from "../lib/constants";
+import WhatsAppIcon from "./icons/WhatsAppIcon";
 
 export default function Contact() {
   const { t } = useLang();
   const { open } = useBranchPicker();
 
   const details = [
-    { Icon: Phone, label: t.contact.phoneLabel, value: t.contact.phone, href: "tel:+96899351374" },
+    { Icon: Phone, label: t.contact.phoneLabel, value: t.contact.phone, href: `tel:${PHONE_MAIN}` },
     { Icon: MapPin, label: t.contact.locationLabel, value: t.contact.location, href: "https://maps.google.com/?q=Muscat,Oman" },
     { Icon: Clock, label: t.contact.hoursLabel, value: t.contact.hours, href: null },
   ];
@@ -59,7 +54,7 @@ export default function Contact() {
                     <Icon className="w-4.5 h-4.5" />
                   </div>
                   <div>
-                    <div className="text-snow/40 text-[11px] font-bold uppercase tracking-wider mb-0.5">{label}</div>
+                    <div className="text-snow/65 text-[11px] font-bold uppercase tracking-wider mb-0.5">{label}</div>
                     {href ? (
                       <a href={href}
                         target={href.startsWith("http") ? "_blank" : undefined}
@@ -98,23 +93,20 @@ export default function Contact() {
 
               {/* WA icon */}
               <div className="w-20 h-20 mx-auto mb-6 rounded-3xl flex items-center justify-center"
-                style={{ background: "rgba(37,211,102,0.15)", border: "1px solid rgba(37,211,102,0.2)" }}>
-                <svg viewBox="0 0 24 24" className="w-11 h-11" style={{ fill: "#25d366" }}>
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.114 1.523 5.843L0 24l6.335-1.498A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.013-1.373l-.36-.213-3.731.882.93-3.634-.234-.373A9.818 9.818 0 1112 21.818z"/>
-                </svg>
+                style={{ background: "rgba(37,211,102,0.15)", border: "1px solid rgba(37,211,102,0.2)", color: "#25d366" }}>
+                <WhatsAppIcon className="w-11 h-11 fill-current shrink-0" />
               </div>
 
               <h3 className="font-black text-snow text-xl mb-1.5">{t.contact.ctaWhatsapp}</h3>
-              <p className="text-snow/45 text-sm mb-8">{t.contact.phone}</p>
+              <p className="text-snow/65 text-sm mb-8">{t.contact.phone}</p>
 
               <div className="flex flex-col gap-3">
                 <button type="button" onClick={open}
                   className="btn-whatsapp justify-center w-full">
-                  {WA}
+                  <WhatsAppIcon />
                   {t.contact.ctaWhatsapp}
                 </button>
-                <a href="tel:+96899351374"
+                <a href={`tel:${PHONE_MAIN}`}
                   className="inline-flex w-full items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-snow/20 text-snow/75 text-sm font-semibold hover:bg-white/8 hover:border-snow/35 hover:text-snow transition-all">
                   <Phone className="w-4 h-4" />
                   {t.contact.ctaCall}

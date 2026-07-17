@@ -14,6 +14,7 @@ export const ar = {
     branches: "فروعنا",
     contact: "تواصل معنا",
     book: "احجز موعد",
+    menuLabel: "القائمة",
   },
   hero: {
     eyebrow: "مكة حجامة · عيادة معتمدة",
@@ -55,6 +56,12 @@ export const ar = {
     quote: "خير ما تداويتم به الحجامة",
     quoteAttr: "النبي محمد ﷺ",
     cta: "احجز جلستك",
+    badges: [
+      { icon: "🌿", label: "طبيعي 100٪" },
+      { icon: "☪️", label: "سنة نبوية" },
+      { icon: "🏅", label: "معتمد طبياً" },
+      { icon: "🛡️", label: "آمن ومعقم" },
+    ],
   },
   benefits: {
     eyebrow: "الفوائد الصحية",
@@ -92,10 +99,14 @@ export const ar = {
     title: "شاهد عيادتنا",
     subtitle: "بيئة نظيفة ومعقمة ومجهزة بأحدث الأدوات",
     close: "إغلاق",
+    openImageLabel: "افتح الصورة",
+    lightboxAlt: "صورة من عيادة مكة حجامة",
   },
   testimonials: {
     eyebrow: "آراء العملاء",
     title: "تجارب حقيقية",
+    ratingLabel: "تقييم العملاء",
+    reviewCount: "+500 مراجعة",
     items: [
       {
         name: "أحمد الراشدي",
@@ -121,6 +132,7 @@ export const ar = {
     eyebrow: "فروعنا",
     title: "نحن في كل مكان",
     subtitle: "اتصل بأقرب فرع إليك",
+    callLabel: "اتصل",
     items: [
       { name: "الخوض",    phone: "78778416" },
       { name: "النصب",    phone: "90719704" },
@@ -166,6 +178,8 @@ export const ar = {
     rights: "جميع الحقوق محفوظة",
     clinic: "مكة حجامة",
     follow: "تابعنا على إنستغرام",
+    location: "مسقط، سلطنة عُمان",
+    verse: "علاج سنة النبي ﷺ",
   },
 };
 

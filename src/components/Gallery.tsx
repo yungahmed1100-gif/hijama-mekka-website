@@ -2,7 +2,13 @@ import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLang } from "../contexts/LanguageContext";
 
-const images = Array.from({ length: 9 }, (_, i) => `/gallery/gallery-0${i + 1}.jpg`);
+const images = Array.from({ length: 9 }, (_, i) => {
+  const base = `/gallery/gallery-0${i + 1}`;
+  return {
+    jpg: `${base}.jpg`,
+    webp: `${base}-480.webp 480w, ${base}-960.webp 960w`,
+  };
+});
 
 export default function Gallery() {
   const { t } = useLang();
@@ -37,19 +43,26 @@ export default function Gallery() {
                 i === 0 ? "col-span-2 md:col-span-1 row-span-2" : ""
               }`}
               style={{ transitionDelay: `${i * 55}ms` }}
-              aria-label={`Open image ${i + 1}`}
+              aria-label={`${t.gallery.openImageLabel} ${i + 1}`}
             >
-              <img
-                src={src}
-                alt={`${t.gallery.title} — مكة حجامة Mekka Hijama clinic Oman ${i + 1}`}
-                loading="lazy"
-                decoding="async"
-                width="600"
-                height="450"
-                className={`w-full object-cover transition-transform duration-700 group-hover:scale-[1.07] ${
-                  i === 0 ? "h-60 md:h-full" : "h-44 md:h-52"
-                }`}
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet={src.webp}
+                  sizes={i === 0 ? "(min-width: 768px) 33vw, 100vw" : "(min-width: 768px) 33vw, 50vw"}
+                />
+                <img
+                  src={src.jpg}
+                  alt={`${t.gallery.title} — مكة حجامة Mekka Hijama clinic Oman ${i + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                  width="600"
+                  height="450"
+                  className={`w-full object-cover transition-transform duration-700 group-hover:scale-[1.07] ${
+                    i === 0 ? "h-60 md:h-full" : "h-44 md:h-52"
+                  }`}
+                />
+              </picture>
               {/* hover overlay */}
               <div className="absolute inset-0 bg-bordeaux-dark/0 group-hover:bg-bordeaux-dark/40 transition-all duration-300 flex items-center justify-center">
                 <div className="w-11 h-11 rounded-full bg-white/20 backdrop-blur-md border border-white/30 opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 flex items-center justify-center">
@@ -84,9 +97,12 @@ export default function Gallery() {
             <ChevronLeft className="w-5 h-5" />
           </button>
 
-          <img src={images[lb]} alt="" onClick={(e) => e.stopPropagation()}
-            className="max-h-[88vh] max-w-[88vw] object-contain rounded-2xl"
-            style={{ boxShadow: "0 32px 80px rgba(0,0,0,0.6)" }} />
+          <picture onClick={(e) => e.stopPropagation()}>
+            <source type="image/webp" srcSet={images[lb].webp} sizes="88vw" />
+            <img src={images[lb].jpg} alt={`${t.gallery.lightboxAlt} ${lb + 1}`}
+              className="max-h-[88vh] max-w-[88vw] object-contain rounded-2xl"
+              style={{ boxShadow: "0 32px 80px rgba(0,0,0,0.6)" }} />
+          </picture>
 
           {/* Next */}
           <button onClick={(e) => { e.stopPropagation(); next(); }}

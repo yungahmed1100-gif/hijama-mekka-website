@@ -1,13 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import { useLang } from "../contexts/LanguageContext";
 import { useBranchPicker } from "../contexts/BranchPickerContext";
-
-const WA = (
-  <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current shrink-0">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.114 1.523 5.843L0 24l6.335-1.498A11.933 11.933 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.013-1.373l-.36-.213-3.731.882.93-3.634-.234-.373A9.818 9.818 0 1112 21.818z"/>
-  </svg>
-);
+import WhatsAppIcon from "./icons/WhatsAppIcon";
 
 export default function Hero() {
   const { t } = useLang();
@@ -52,7 +46,7 @@ export default function Hero() {
             >
               <span className="block">{t.hero.h1a}</span>
               <span className="block text-gold-shimmer">{t.hero.h1b}</span>
-              <span className="block text-snow/35 font-light mt-1"
+              <span className="block text-snow/60 font-light mt-1"
                 style={{ fontSize: "clamp(1.2rem,3vw,2.2rem)" }}>
                 {t.hero.h1c}
               </span>
@@ -66,7 +60,7 @@ export default function Hero() {
                   style={{ fontSize: "clamp(0.85rem,1.5vw,1rem)" }}>
                   «{t.hero.hadith}»
                 </p>
-                <p className="text-snow/40 text-xs font-semibold">{t.hero.hadithAttr}</p>
+                <p className="text-snow/60 text-xs font-semibold">{t.hero.hadithAttr}</p>
               </div>
             </div>
 
@@ -85,7 +79,7 @@ export default function Hero() {
                 onClick={open}
                 className="btn-whatsapp"
               >
-                {WA}
+                <WhatsAppIcon />
                 {t.hero.ctaBook}
               </button>
               <a href="#about" className="btn-ghost text-sm">
@@ -105,7 +99,7 @@ export default function Hero() {
               ].map((s, i) => (
                 <div key={i} className="text-center py-4 px-2">
                   <div className="font-black text-gold" style={{ fontSize: "clamp(1.3rem,2.5vw,1.8rem)" }}>{s.v}</div>
-                  <div className="text-snow/38 mt-0.5 text-[10px] leading-tight">{s.l}</div>
+                  <div className="text-snow/60 mt-0.5 text-[10px] leading-tight">{s.l}</div>
                 </div>
               ))}
             </div>
@@ -157,7 +151,7 @@ export default function Hero() {
       {/* Scroll cue */}
       <a
         href="#trust"
-        className="absolute bottom-7 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-snow/25 hover:text-gold/70 transition-colors"
+        className="absolute bottom-7 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-snow/60 hover:text-gold/80 transition-colors"
       >
         <span className="eyebrow text-[8px] tracking-[0.4em]">{t.hero.scrollCue}</span>
         <ChevronDown className="w-4 h-4 animate-bounce" />

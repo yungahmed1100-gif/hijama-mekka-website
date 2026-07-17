@@ -1,13 +1,6 @@
 import { useLang } from "../contexts/LanguageContext";
 import { useBranchPicker } from "../contexts/BranchPickerContext";
 
-const badges = [
-  { icon: "🌿", label: "طبيعي 100٪" },
-  { icon: "☪️",  label: "سنة نبوية" },
-  { icon: "🏅", label: "معتمد طبياً" },
-  { icon: "🛡️", label: "آمن ومعقم" },
-];
-
 export default function About() {
   const { t } = useLang();
   const { open } = useBranchPicker();
@@ -26,11 +19,16 @@ export default function About() {
             {/* main photo */}
             <div className="relative rounded-3xl overflow-hidden"
               style={{ boxShadow: "0 24px 72px rgba(76,4,26,0.2)" }}>
-              <img src="/gallery/gallery-02.jpg"
-                alt="جلسة حجامة نبوية في عيادة مكة حجامة بعُمان — Hijama cupping session at Mekka Hijama clinic Oman"
-                loading="lazy" decoding="async" width="600" height="500"
-                className="w-full object-cover"
-                style={{ height: "clamp(320px,45vw,500px)" }} />
+              <picture>
+                <source type="image/webp"
+                  srcSet="/gallery/gallery-02-480.webp 480w, /gallery/gallery-02-960.webp 960w"
+                  sizes="(min-width: 1024px) 50vw, 100vw" />
+                <img src="/gallery/gallery-02.jpg"
+                  alt="جلسة حجامة نبوية في عيادة مكة حجامة بعُمان — Hijama cupping session at Mekka Hijama clinic Oman"
+                  loading="lazy" decoding="async" width="600" height="500"
+                  className="w-full object-cover"
+                  style={{ height: "clamp(320px,45vw,500px)" }} />
+              </picture>
               <div className="absolute inset-0"
                 style={{ background: "linear-gradient(to top, rgba(76,4,26,0.6) 0%, transparent 55%)" }} />
             </div>
@@ -46,10 +44,14 @@ export default function About() {
             {/* Inset thumbnail */}
             <div className="absolute top-5 end-5 w-24 h-24 rounded-2xl overflow-hidden"
               style={{ boxShadow: "0 0 0 3px #faf6f7, 0 8px 28px rgba(76,4,26,0.2)" }}>
-              <img src="/gallery/gallery-04.jpg"
-                alt="العلاج بالحجامة والعلاج الطبيعي — cupping and physiotherapy treatment"
-                loading="lazy" decoding="async" width="200" height="200"
-                className="w-full h-full object-cover" />
+              <picture>
+                <source type="image/webp"
+                  srcSet="/gallery/gallery-04-480.webp 480w" sizes="96px" />
+                <img src="/gallery/gallery-04.jpg"
+                  alt="العلاج بالحجامة والعلاج الطبيعي — cupping and physiotherapy treatment"
+                  loading="lazy" decoding="async" width="200" height="200"
+                  className="w-full h-full object-cover" />
+              </picture>
             </div>
 
             {/* blobs */}
@@ -83,7 +85,7 @@ export default function About() {
 
             {/* Badge grid */}
             <div className="reveal reveal-delay-4 grid grid-cols-2 gap-3 mt-9">
-              {badges.map((b) => (
+              {t.about.badges.map((b) => (
                 <div key={b.label}
                   className="flex items-center gap-3 rounded-xl bg-alabaster/70 hover:bg-bordeaux/6 border border-transparent hover:border-bordeaux/10 px-4 py-3 transition-all duration-200 group cursor-default">
                   <span className="text-xl leading-none">{b.icon}</span>

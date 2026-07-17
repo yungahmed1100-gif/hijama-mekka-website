@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, type ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, useMemo, type ReactNode } from "react";
 import { ar } from "../i18n/ar";
 import { en } from "../i18n/en";
 import { ur } from "../i18n/ur";
@@ -11,25 +11,29 @@ const translations: Record<Lang, Translations> = { ar, en, ur };
 const isLang = (value: string | null): value is Lang =>
   value === "ar" || value === "en" || value === "ur";
 
-// Each language gets its own shareable, indexable URL (?lang=en / ?lang=ur);
-// Arabic is the default and lives at the bare URL.
+// Each language gets its own shareable, indexable URL: Arabic at "/", English
+// at "/en", Urdu at "/ur". The prerender build emits static HTML for /en and
+// /ur so crawlers see localized content. Legacy "?lang=" links still resolve
+// here (and are 308-redirected to the path URLs by vercel.json).
 const langFromUrl = (): Lang => {
+  const seg = window.location.pathname.split("/")[1];
+  if (isLang(seg)) return seg;
   const param = new URLSearchParams(window.location.search).get("lang");
   return isLang(param) ? param : "ar";
 };
 
+const pathFor = (lang: Lang): string => (lang === "ar" ? "/" : `/${lang}`);
+
 const syncUrlAndCanonical = (lang: Lang) => {
+  // Move to the language's path URL, dropping any legacy ?lang= query param.
   const url = new URL(window.location.href);
-  if (lang === "ar") url.searchParams.delete("lang");
-  else url.searchParams.set("lang", lang);
-  window.history.replaceState(null, "", url);
+  url.pathname = pathFor(lang);
+  url.searchParams.delete("lang");
+  window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
 
   const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
   if (canonical) {
-    const canonicalUrl = new URL(canonical.href);
-    if (lang === "ar") canonicalUrl.searchParams.delete("lang");
-    else canonicalUrl.searchParams.set("lang", lang);
-    canonical.href = canonicalUrl.toString();
+    canonical.href = `${url.origin}${pathFor(lang)}`;
   }
 };
 
@@ -63,8 +67,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     syncUrlAndCanonical(lang);
   }, [lang]);
 
+  const value = useMemo(
+    () => ({ lang, setLang, t: translations[lang] }),
+    [lang],
+  );
+
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t: translations[lang] }}>
+    <LanguageContext.Provider value={value}>
       {children}
     </LanguageContext.Provider>
   );

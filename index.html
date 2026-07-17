@@ -2,10 +2,12 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- ── Primary SEO (Arabic-first, bilingual) ────────────────────── -->
+    <!-- i18n:head:start -->
     <title>مكة حجامة | حجامة، علاج طبيعي وعلاج صيني في عُمان — Mekka Hijama Clinic Oman</title>
     <meta name="description" content="مكة حجامة — عيادة معتمدة للحجامة النبوية والعلاج الطبيعي (الفيزيوثيرابي) والعلاج الصيني في سلطنة عُمان. ١٢ فرعاً في مسقط، صحار، صلالة والمزيد. احجز عبر واتساب. Certified hijama (cupping), physiotherapy & Chinese therapy clinic in Oman — 12 branches. Book via WhatsApp." />
     <meta name="keywords" content="حجامة, حجامة عمان, حجامة مسقط, الحجامة النبوية, علاج طبيعي, فيزيوثيرابي, علاج صيني, وخز إبر, عيادة حجامة, حجامة صحار, حجامة صلالة, hijama, cupping therapy Oman, hijama Muscat, physiotherapy Oman, Chinese therapy, acupuncture Oman, Mekka Hijama" />
@@ -15,8 +17,8 @@
 
     <!-- ── Language / region targeting ──────────────────────────────── -->
     <link rel="alternate" hreflang="ar" href="https://hijamamekka.com/" />
-    <link rel="alternate" hreflang="en" href="https://hijamamekka.com/?lang=en" />
-    <link rel="alternate" hreflang="ur" href="https://hijamamekka.com/?lang=ur" />
+    <link rel="alternate" hreflang="en" href="https://hijamamekka.com/en" />
+    <link rel="alternate" hreflang="ur" href="https://hijamamekka.com/ur" />
     <link rel="alternate" hreflang="x-default" href="https://hijamamekka.com/" />
     <meta name="geo.region" content="OM" />
     <meta name="geo.placename" content="Muscat, Oman" />
@@ -35,12 +37,14 @@
     <meta property="og:image:alt" content="مكة حجامة | Mekka Hijama Clinic — Oman" />
     <meta property="og:locale" content="ar_OM" />
     <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:locale:alternate" content="ur_PK" />
 
     <!-- ── Twitter / X card ─────────────────────────────────────────── -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="مكة حجامة | حجامة، علاج طبيعي وعلاج صيني في عُمان" />
     <meta name="twitter:description" content="عيادة معتمدة للحجامة النبوية والعلاج الطبيعي والعلاج الصيني في عُمان. ١٢ فرعاً. احجز عبر واتساب." />
     <meta name="twitter:image" content="https://hijamamekka.com/og-image.jpg" />
+    <!-- i18n:head:end -->
 
     <meta name="theme-color" content="#4c041a" />
     <link rel="manifest" href="/site.webmanifest" />
@@ -48,7 +52,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="image" href="/hero.webp" fetchpriority="high" />
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
     <!-- Meta Pixel Code -->
     <script>
@@ -84,12 +88,19 @@
       "priceRange": "$$",
       "currenciesAccepted": "OMR",
       "medicalSpecialty": ["PhysicalTherapy", "AlternativeMedicine"],
+      "sameAs": ["https://instagram.com/makkah_cupping"],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Muscat",
         "addressRegion": "Muscat Governorate",
         "addressCountry": "OM"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 23.5880,
+        "longitude": 58.3829
+      },
+      "hasMap": "https://maps.google.com/?q=Muscat,Oman",
       "areaServed": [
         { "@type": "City", "name": "Muscat" },
         { "@type": "City", "name": "Sohar" },
@@ -173,6 +184,7 @@
 
     <!-- Crawlable fallback: real content for engines/bots before JS renders -->
     <noscript>
+      <!-- i18n:noscript:start -->
       <main>
         <h1>مكة حجامة — عيادة الحجامة والعلاج الطبيعي والعلاج الصيني في عُمان</h1>
         <p>
@@ -198,6 +210,7 @@
           Book your appointment via WhatsApp or call +968 9935 1374.
         </p>
       </main>
+      <!-- i18n:noscript:end -->
     </noscript>
 
     <script type="module" src="/src/main.tsx"></script>

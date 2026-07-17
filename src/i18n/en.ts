@@ -16,6 +16,7 @@ export const en: Translations = {
     branches: "Our Branches",
     contact: "Contact",
     book: "Book Now",
+    menuLabel: "Menu",
   },
   hero: {
     eyebrow: "Mekka Hijama · Certified Clinic",
@@ -57,6 +58,12 @@ export const en: Translations = {
     quote: "The best of your remedies is cupping",
     quoteAttr: "Prophet Muhammad ﷺ",
     cta: "Book Your Session",
+    badges: [
+      { icon: "🌿", label: "100% Natural" },
+      { icon: "☪️", label: "Prophetic Sunnah" },
+      { icon: "🏅", label: "Medically Certified" },
+      { icon: "🛡️", label: "Safe & Sterile" },
+    ],
   },
   benefits: {
     eyebrow: "Health Benefits",
@@ -94,10 +101,14 @@ export const en: Translations = {
     title: "See Our Clinic",
     subtitle: "Clean, sterile environment equipped with the latest tools",
     close: "Close",
+    openImageLabel: "Open image",
+    lightboxAlt: "Photo from Mekka Hijama clinic",
   },
   testimonials: {
     eyebrow: "Client Reviews",
     title: "Real Experiences",
+    ratingLabel: "Client Rating",
+    reviewCount: "500+ reviews",
     items: [
       {
         name: "Ahmed Al-Rashdi",
@@ -123,6 +134,7 @@ export const en: Translations = {
     eyebrow: "Our Branches",
     title: "We Are Everywhere",
     subtitle: "Call the nearest branch to you",
+    callLabel: "Call",
     items: [
       { name: "Al-Khoudh",    phone: "78778416" },
       { name: "Al-Nasab",     phone: "90719704" },
@@ -168,5 +180,7 @@ export const en: Translations = {
     rights: "All rights reserved",
     clinic: "Mekka Hijama",
     follow: "Follow us on Instagram",
+    location: "Muscat, Sultanate of Oman",
+    verse: "Healing through the Prophetic Sunnah ﷺ",
   },
 };

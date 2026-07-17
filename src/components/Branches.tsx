@@ -59,7 +59,7 @@ export default function Branches() {
               {/* Call chip */}
               <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-bordeaux/6 group-hover:bg-bordeaux/12 text-bordeaux/50 group-hover:text-bordeaux text-[10px] font-bold uppercase tracking-widest transition-all duration-200">
                 <PhoneIcon />
-                اتصل
+                {t.branches.callLabel}
               </div>
             </a>
           ))}
