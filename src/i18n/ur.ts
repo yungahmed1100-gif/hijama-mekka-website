@@ -16,6 +16,7 @@ export const ur: Translations = {
     branches: "شاخیں",
     contact: "رابطہ",
     book: "اپوائنٹمنٹ",
+    menuLabel: "مینو",
   },
   hero: {
     eyebrow: "مکہ حجامہ · مستند کلینک",
@@ -57,6 +58,12 @@ export const ur: Translations = {
     quote: "بہترین دوا جو تم استعمال کرتے ہو وہ حجامہ ہے",
     quoteAttr: "نبی کریم محمد ﷺ",
     cta: "سیشن بک کریں",
+    badges: [
+      { icon: "🌿", label: "100% قدرتی" },
+      { icon: "☪️", label: "سنت نبوی" },
+      { icon: "🏅", label: "طبی طور پر مستند" },
+      { icon: "🛡️", label: "محفوظ و جراثیم مکت" },
+    ],
   },
   benefits: {
     eyebrow: "صحت کے فوائد",
@@ -94,10 +101,14 @@ export const ur: Translations = {
     title: "ہمارا کلینک دیکھیں",
     subtitle: "صاف، جراثیم سے پاک اور جدید آلات سے لیس ماحول",
     close: "بند کریں",
+    openImageLabel: "تصویر کھولیں",
+    lightboxAlt: "مکہ حجامہ کلینک کی تصویر",
   },
   testimonials: {
     eyebrow: "مریضوں کی آراء",
     title: "حقیقی تجربات",
+    ratingLabel: "مریضوں کی درجہ بندی",
+    reviewCount: "500+ آراء",
     items: [
       {
         name: "احمد الراشدی",
@@ -123,6 +134,7 @@ export const ur: Translations = {
     eyebrow: "ہماری شاخیں",
     title: "ہم ہر جگہ موجود ہیں",
     subtitle: "اپنے قریبی برانچ سے رابطہ کریں",
+    callLabel: "کال کریں",
     items: [
       { name: "الخوض",    phone: "78778416" },
       { name: "النصب",    phone: "90719704" },
@@ -168,5 +180,7 @@ export const ur: Translations = {
     rights: "جملہ حقوق محفوظ",
     clinic: "مکہ حجامہ",
     follow: "انسٹاگرام پر فالو کریں",
+    location: "مسقط، سلطنت عمان",
+    verse: "سنت نبوی ﷺ سے شفا",
   },
 };

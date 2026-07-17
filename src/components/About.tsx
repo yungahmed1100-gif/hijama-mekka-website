@@ -1,13 +1,6 @@
 import { useLang } from "../contexts/LanguageContext";
 import { useBranchPicker } from "../contexts/BranchPickerContext";
 
-const badges = [
-  { icon: "🌿", label: "طبيعي 100٪" },
-  { icon: "☪️",  label: "سنة نبوية" },
-  { icon: "🏅", label: "معتمد طبياً" },
-  { icon: "🛡️", label: "آمن ومعقم" },
-];
-
 export default function About() {
   const { t } = useLang();
   const { open } = useBranchPicker();
@@ -83,7 +76,7 @@ export default function About() {
 
             {/* Badge grid */}
             <div className="reveal reveal-delay-4 grid grid-cols-2 gap-3 mt-9">
-              {badges.map((b) => (
+              {t.about.badges.map((b) => (
                 <div key={b.label}
                   className="flex items-center gap-3 rounded-xl bg-alabaster/70 hover:bg-bordeaux/6 border border-transparent hover:border-bordeaux/10 px-4 py-3 transition-all duration-200 group cursor-default">
                   <span className="text-xl leading-none">{b.icon}</span>

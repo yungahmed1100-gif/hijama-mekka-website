@@ -37,7 +37,7 @@ export default function Gallery() {
                 i === 0 ? "col-span-2 md:col-span-1 row-span-2" : ""
               }`}
               style={{ transitionDelay: `${i * 55}ms` }}
-              aria-label={`Open image ${i + 1}`}
+              aria-label={`${t.gallery.openImageLabel} ${i + 1}`}
             >
               <img
                 src={src}
@@ -84,7 +84,7 @@ export default function Gallery() {
             <ChevronLeft className="w-5 h-5" />
           </button>
 
-          <img src={images[lb]} alt="" onClick={(e) => e.stopPropagation()}
+          <img src={images[lb]} alt={`${t.gallery.lightboxAlt} ${lb + 1}`} onClick={(e) => e.stopPropagation()}
             className="max-h-[88vh] max-w-[88vw] object-contain rounded-2xl"
             style={{ boxShadow: "0 32px 80px rgba(0,0,0,0.6)" }} />
 

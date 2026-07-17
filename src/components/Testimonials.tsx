@@ -82,8 +82,8 @@ export default function Testimonials() {
             </div>
             <div className="w-px h-10 bg-white/15" />
             <div className="text-snow/65 text-sm leading-relaxed">
-              <div className="text-snow font-bold mb-0.5">تقييم العملاء</div>
-              +500 مراجعة
+              <div className="text-snow font-bold mb-0.5">{t.testimonials.ratingLabel}</div>
+              {t.testimonials.reviewCount}
             </div>
           </div>
         </div>

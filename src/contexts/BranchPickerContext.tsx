@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, type ReactNode } from "react";
+import { createContext, useContext, useState, useMemo, type ReactNode } from "react";
 import BranchPickerModal from "../components/BranchPickerModal";
 
 interface BranchPickerContextValue {
@@ -16,11 +16,13 @@ const BranchPickerContext = createContext<BranchPickerContextValue>({
 export function BranchPickerProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const open = () => setIsOpen(true);
-  const close = () => setIsOpen(false);
+  const value = useMemo(
+    () => ({ open: () => setIsOpen(true), close: () => setIsOpen(false), isOpen }),
+    [isOpen],
+  );
 
   return (
-    <BranchPickerContext.Provider value={{ open, close, isOpen }}>
+    <BranchPickerContext.Provider value={value}>
       {children}
       <BranchPickerModal isOpen={isOpen} onClose={close} />
     </BranchPickerContext.Provider>

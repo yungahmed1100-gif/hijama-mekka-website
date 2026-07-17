@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, type ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, useMemo, type ReactNode } from "react";
 import { ar } from "../i18n/ar";
 import { en } from "../i18n/en";
 import { ur } from "../i18n/ur";
@@ -63,8 +63,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     syncUrlAndCanonical(lang);
   }, [lang]);
 
+  const value = useMemo(
+    () => ({ lang, setLang, t: translations[lang] }),
+    [lang],
+  );
+
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t: translations[lang] }}>
+    <LanguageContext.Provider value={value}>
       {children}
     </LanguageContext.Provider>
   );
