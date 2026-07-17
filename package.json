@@ -12,7 +12,8 @@
     "test": "vitest run",
     "test:e2e": "playwright test",
     "optimize:images": "node scripts/optimize-images.mjs",
-    "perf": "vite build && vite preview --port 4173"
+    "serve:dist": "node scripts/serve-dist.mjs",
+    "perf": "vite build && node scripts/serve-dist.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

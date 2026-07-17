@@ -26,4 +26,9 @@ export default tseslint.config(
       "no-console": ["warn", { allow: ["warn", "error"] }],
     },
   },
+  {
+    // Build/tooling scripts legitimately log progress to stdout.
+    files: ["scripts/**/*.{ts,mjs,js}"],
+    rules: { "no-console": "off" },
+  },
 );
