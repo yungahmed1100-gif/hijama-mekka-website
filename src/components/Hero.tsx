@@ -46,7 +46,7 @@ export default function Hero() {
             >
               <span className="block">{t.hero.h1a}</span>
               <span className="block text-gold-shimmer">{t.hero.h1b}</span>
-              <span className="block text-snow/35 font-light mt-1"
+              <span className="block text-snow/60 font-light mt-1"
                 style={{ fontSize: "clamp(1.2rem,3vw,2.2rem)" }}>
                 {t.hero.h1c}
               </span>
@@ -60,7 +60,7 @@ export default function Hero() {
                   style={{ fontSize: "clamp(0.85rem,1.5vw,1rem)" }}>
                   «{t.hero.hadith}»
                 </p>
-                <p className="text-snow/40 text-xs font-semibold">{t.hero.hadithAttr}</p>
+                <p className="text-snow/60 text-xs font-semibold">{t.hero.hadithAttr}</p>
               </div>
             </div>
 
@@ -99,7 +99,7 @@ export default function Hero() {
               ].map((s, i) => (
                 <div key={i} className="text-center py-4 px-2">
                   <div className="font-black text-gold" style={{ fontSize: "clamp(1.3rem,2.5vw,1.8rem)" }}>{s.v}</div>
-                  <div className="text-snow/38 mt-0.5 text-[10px] leading-tight">{s.l}</div>
+                  <div className="text-snow/60 mt-0.5 text-[10px] leading-tight">{s.l}</div>
                 </div>
               ))}
             </div>
@@ -151,7 +151,7 @@ export default function Hero() {
       {/* Scroll cue */}
       <a
         href="#trust"
-        className="absolute bottom-7 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-snow/25 hover:text-gold/70 transition-colors"
+        className="absolute bottom-7 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-snow/60 hover:text-gold/80 transition-colors"
       >
         <span className="eyebrow text-[8px] tracking-[0.4em]">{t.hero.scrollCue}</span>
         <ChevronDown className="w-4 h-4 animate-bounce" />

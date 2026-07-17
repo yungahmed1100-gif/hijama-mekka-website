@@ -54,7 +54,7 @@ export default function Contact() {
                     <Icon className="w-4.5 h-4.5" />
                   </div>
                   <div>
-                    <div className="text-snow/40 text-[11px] font-bold uppercase tracking-wider mb-0.5">{label}</div>
+                    <div className="text-snow/65 text-[11px] font-bold uppercase tracking-wider mb-0.5">{label}</div>
                     {href ? (
                       <a href={href}
                         target={href.startsWith("http") ? "_blank" : undefined}
@@ -98,7 +98,7 @@ export default function Contact() {
               </div>
 
               <h3 className="font-black text-snow text-xl mb-1.5">{t.contact.ctaWhatsapp}</h3>
-              <p className="text-snow/45 text-sm mb-8">{t.contact.phone}</p>
+              <p className="text-snow/65 text-sm mb-8">{t.contact.phone}</p>
 
               <div className="flex flex-col gap-3">
                 <button type="button" onClick={open}

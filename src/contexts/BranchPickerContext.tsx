@@ -24,7 +24,7 @@ export function BranchPickerProvider({ children }: { children: ReactNode }) {
   return (
     <BranchPickerContext.Provider value={value}>
       {children}
-      <BranchPickerModal isOpen={isOpen} onClose={close} />
+      <BranchPickerModal isOpen={isOpen} onClose={value.close} />
     </BranchPickerContext.Provider>
   );
 }

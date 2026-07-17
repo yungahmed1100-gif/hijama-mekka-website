@@ -28,7 +28,7 @@ export default function Footer() {
             <a href="#home" className="inline-block mb-5">
               <img src="/logo.png" alt="Mekka Hijama" className="h-14 w-auto opacity-90" />
             </a>
-            <p className="text-snow/40 text-sm leading-relaxed max-w-xs mb-6">{t.footer.tagline}</p>
+            <p className="text-snow/60 text-sm leading-relaxed max-w-xs mb-6">{t.footer.tagline}</p>
             <div className="flex gap-2.5">
               <button type="button" onClick={open}
                 className="w-9 h-9 rounded-full bg-white/7 border border-white/10 flex items-center justify-center text-snow/60 hover:text-white hover:bg-[#25d366]/80 hover:border-[#25d366]/40 transition-all"
@@ -63,7 +63,7 @@ export default function Footer() {
               {links.map((l) => (
                 <li key={l.href}>
                   <a href={l.href}
-                    className="text-snow/40 hover:text-gold text-sm transition-colors duration-200">
+                    className="text-snow/60 hover:text-gold text-sm transition-colors duration-200">
                     {l.label}
                   </a>
                 </li>
@@ -74,7 +74,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4 className="text-snow/80 font-bold text-xs uppercase tracking-widest mb-5">{t.footer.contact}</h4>
-            <ul className="space-y-3 text-snow/40 text-sm">
+            <ul className="space-y-3 text-snow/60 text-sm">
               <li>
                 <a href={`tel:${PHONE_MAIN}`} className="flex items-center gap-2 hover:text-gold transition-colors">
                   <span className="text-gold text-base">📞</span>
@@ -97,7 +97,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-7 text-snow/25 text-xs">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-7 text-snow/60 text-xs">
           <span>© {year} {t.footer.clinic} · {t.footer.rights}</span>
           <span className="flex items-center gap-1.5">
             <span className="text-gold text-sm">☪</span>
